@@ -7,8 +7,8 @@ import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 
 import decoration from '../../resources/img/vision.png';
 
-class App extends Component{
-
+class App extends Component {
+    
     state = {
         selectedChar: null
     }
@@ -19,7 +19,7 @@ class App extends Component{
         })
     }
 
-    render () {
+    render() {
         return (
             <div className="app">
                 <AppHeader/>
@@ -29,14 +29,10 @@ class App extends Component{
                     </ErrorBoundary>
                     <div className="char__content">
                         <ErrorBoundary>
-                            <CharList 
-                                onCharSelected={this.onCharSelected}
-                                />
+                            <CharList onCharSelected={this.onCharSelected}/>
                         </ErrorBoundary>
                         <ErrorBoundary>
-                            <CharInfo
-                                charId={this.state.selectedChar}
-                            />
+                            <CharInfo charId={this.state.selectedChar}/>
                         </ErrorBoundary>
                     </div>
                     <img className="bg-decoration" src={decoration} alt="vision"/>
@@ -44,7 +40,6 @@ class App extends Component{
             </div>
         )
     }
-    
 }
 
 export default App;
