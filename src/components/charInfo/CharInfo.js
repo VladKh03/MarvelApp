@@ -26,7 +26,7 @@ class CharInfo extends Component {
             this.updateChar();
         }
     }
-
+    
     updateChar = () => {
         const {charId} = this.props;
         if (!charId) {
@@ -87,7 +87,6 @@ const View = ({char}) => {
     if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
         imgStyle = {'objectFit' : 'contain'};
     }
-
     return (
         <>
             <div className="char__basics">
