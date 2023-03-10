@@ -73,6 +73,7 @@ class CharList extends Component {
             )
             
         });
+        
         return (            
             <ul className="char__grid">
                 {items}
