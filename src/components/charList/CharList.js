@@ -12,7 +12,9 @@ class CharList extends Component {
         error: false,
         newItemLoading: false,
         offset: 210,
-        charEnded: false
+        charEnded: false,
+        firstInit:true
+        
     }
     
     marvelService = new MarvelService();
@@ -39,13 +41,24 @@ class CharList extends Component {
         if (newCharList.length < 9) {
             ended = true;
         }
-        this.setState(({offset, charList}) => ({
+        this.setState(({offset, charList,firstInit}) => (
+            firstInit ?
+            {
+            charList: [...charList],
+            loading: false,
+            newItemLoading: false,
+            offset: offset + 9,
+            charEnded: ended,
+            firstInit:false
+        }:
+        {
             charList: [...charList, ...newCharList],
             loading: false,
             newItemLoading: false,
             offset: offset + 9,
             charEnded: ended
-        }))
+        }
+        ))
     }
 
     onError = () => {
