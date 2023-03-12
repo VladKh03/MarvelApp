@@ -21,7 +21,7 @@ const RandomChar = () => {
         return () => {
             clearInterval(timerId)
         }
-    }, [])
+    }, []) // eslint-disable-line
 
     const onCharLoaded = (char) => {
         setLoading(false);
