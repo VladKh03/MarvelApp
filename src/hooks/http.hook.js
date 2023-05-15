@@ -8,6 +8,7 @@ export const useHttp = () => {
         setLoading(true)
 
         try {
+            
             const response = await fetch(url, {method, body, headers})
             
             if (!response.ok) {
